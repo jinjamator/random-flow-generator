@@ -1,0 +1,28 @@
+stream_count: 6
+sender_base_interfaces: 
+  - ens224
+receiver_base_interfaces: 
+  - ens256
+sender_prefixes:
+  {% for i in range(10,250) %}
+  - 100.61.1.{{ i }}/24 
+  {% endfor %}
+sender_default_gateway: 100.61.1.1
+receiver_prefixes: 
+  {% for i in range(10,250) %}
+  - 100.61.2.{{ i }}/24 
+  {% endfor %}
+receiver_default_gateway: 100.61.2.1
+namespace_prefix: iperf_
+interface_prefix: iperf_
+stream_duration_max: 60
+stream_duration_min: 3
+stream_pause_max: 30
+stream_pause_min: 1
+stream_restarts_min: 0
+stream_restarts_max: 5
+stream_port_min: 3000
+stream_port_max: 65000
+stream_protocols:
+  - udp
+
